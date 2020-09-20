@@ -1,0 +1,54 @@
+
+<div class="wrapper ">
+ 
+        <div class="text-center">
+            <h2>Appointments</h2>
+        </div>
+
+      <div class="table shadow p-3 mb-5">
+        
+        <div class="row header" >
+          <div class="cell">
+           Appointment ID
+          </div>
+          <div class="cell">
+            Coach ID
+          </div>
+          <div class="cell">
+            Parent ID
+          </div>             
+          <div class="cell" >
+            Date
+          </div>
+          <div class="cell" >
+            Time Slot
+          </div>
+        </div>
+        
+        <div class="row" *ngFor="let appointment of appointmentsData;">
+          <div class="cell" data-title="Appointment ID"  >
+           {{appointment.appointmentID}}
+           
+         </div>
+          <div class="cell" data-title="Coach ID"  >
+            {{appointment.faculty_phone}}
+             
+          </div>
+          <div class="cell" data-title="Parent ID">
+            {{appointment.parent_phone}}
+          </div>
+          <div class="cell" data-title="Date">
+            {{appointment.appointmentDate | date}}
+        </div>
+        <div class="cell" data-title="Time Slot">
+            {{appointment.timeSlot}}
+        </div>
+     
+        
+        </div>
+            
+      </div>
+  </div> 
+    
+  
+  

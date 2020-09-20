@@ -1,0 +1,60 @@
+
+<div class="wrapper ">
+   
+  <div class="table2 " >
+                                           
+    <div class="row2">
+  
+      <div class="cell2 "  >
+          <h2>Training Category</h2>
+  
+      </div>
+      <div class="cell2" >
+          <button class="btn btn-success" (click)="newTraining()"><i class="fa fa-plus" aria-hidden="true"></i> New Training</button>
+      </div>       
+                     
+    </div>                     
+  </div> 
+
+
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No.
+        </div>
+        <div class="cell">
+          Category Name
+        </div>
+        <div class="cell">
+         Training Code
+        </div>        
+        <div class="cell" >
+        
+        </div>
+      </div>
+      
+      <div class="row" *ngFor="let training of trainingInfo; let i = index;">
+      
+        <div class="cell" data-title="S.No."  >
+          
+           {{i+1}}
+        </div>
+        <div class="cell" data-title="Category Name">
+          {{training.trainingCategory}}
+        </div>
+        <div class="cell" data-title="Training Code">
+          {{training.trainingId}}
+        </div>
+       
+        <div class="cell" >
+          <a [routerLink]="['/training/show-courses/'+ training.trainingId]"><u>MANAGE</u></a>
+            
+        </div>
+      
+      </div>
+          
+    </div>
+</div> 
+  

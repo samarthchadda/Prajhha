@@ -1,0 +1,77 @@
+/* table 2 */
+.table2 {
+    margin: 0 0 40px 0;
+    width: 100%;
+    display: table;
+  }
+  @media screen and (max-width: 580px) {
+    .table2 {
+      display: block;
+    }
+  }
+  
+  .row2 {
+    display: table-row;
+    background: white;
+    text-align:center;
+    vertical-align: center;
+  }
+  .row2:nth-of-type(odd) {
+    background: white;
+  }
+  
+  .row2.header2 {
+    font-weight: 600;
+    color: darkgreen;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    height: 40px;
+  }
+  
+  @media screen and (max-width: 580px) {
+   
+    .row2 {
+      padding: 14px 0 7px;
+      display: block;
+    }
+    .row2.header2 {
+      padding: 0;
+      height: 6px;
+    }
+    .row2.header2 .cell1 {
+      display: none;
+    }
+    
+    .row2 .cell2 {
+      margin-bottom: 10px;
+      text-align:center;
+    }
+    .row2 .cell2:before {
+      margin-bottom: 3px;
+      content: attr(data-title);
+      min-width: 98px;
+      font-size: 20px;
+      line-height: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+     
+      display: block;
+      text-align:center;
+      margin:10px;
+    
+    }
+  }
+  
+  .cell2 {
+    padding: 6px 12px;
+    display: table-cell;
+  }
+  @media screen and (max-width: 580px) {
+    .cell2 {
+      padding: 2px 16px;
+      display: block;
+    }
+  }
+  
+  

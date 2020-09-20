@@ -1,0 +1,31 @@
+<div class="table2 mt-4" >
+                                           
+    <div class="row2">
+  
+      <div class="cell2 "  >
+          <h2>All News</h2>
+  
+      </div>
+      <div class="cell2" >
+          <button (click)="newNews()" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Create New</button>
+      </div>       
+                     
+    </div>                     
+  </div> 
+
+<div class="row shadow p-3 m-5 bg-white rounded" style="border:none; background:white; height:auto; width:auto" *ngFor="let news of newsInfo">
+    <div class="col-sm-4 mr-4" >
+        <img [src]="news.Image" style="height:200px; width: 300px;" />
+    </div>
+    <div class="col-sm-6">  
+        <p>Posted Date : {{news.PostedDate | date:'medium'}}</p>
+        <p style="font-size:20px; color:#7e8797;">{{news.NewsContent}}</p>
+        <span class="mr-4">
+            <button (click)="editNews(news.NewsId)" class="btn btn-primary rounded-circle"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+         </span>
+         <span class="ml-2">   
+        <button (click)="deleteNews(news.NewsId)" class="btn btn-danger rounded-circle"><i class="fa fa-trash" aria-hidden="true" ></i></button>
+        </span>
+
+    </div>
+</div>

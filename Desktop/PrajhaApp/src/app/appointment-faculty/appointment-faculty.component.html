@@ -1,0 +1,71 @@
+<div class="wrapper ">
+    <div class="table2 " >
+                                           
+        <div class="row2">
+      
+          <div class="cell2 "  >
+              <h2>Coaches</h2>
+      
+          </div>
+          <div class="cell2" >
+              <button (click)="newFaculties()" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true" ></i> New Coach</button>
+          </div>       
+                         
+        </div>                     
+      </div> 
+   
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+        <div class="cell">
+         Coach Name
+        </div>
+        <div class="cell">
+            Coach ID
+        </div>
+        <div class="cell">
+            Category
+        </div>
+        <div class="cell">
+            Percentage Share
+        </div>
+           
+        <div class="cell" >
+            
+        </div>
+      </div>
+      
+      <div class="row" *ngFor="let faculty of appointFacultyInfo;let i = index;">
+      
+        <div class="cell" data-title="S.No."  >
+            {{i+1}}
+           
+        </div>
+        <div class="cell" data-title="Coach Name"  >
+            {{ faculty.Name}}
+           
+        </div>
+        <div class="cell" data-title="Coach ID">
+            {{ faculty.Phone}}
+        </div>
+        <div class="cell" data-title="Category">
+            {{ faculty.Category}}
+        </div>
+        <div class="cell" data-title="Percentage Share">
+            {{ faculty.PercentageShare}} %
+        </div>
+   
+       
+        <div class="cell">
+          <a [routerLink]="['/appoint-faculties/edit/'+ faculty.Phone]"><u>MANAGE</u></a>
+        </div>
+      
+      </div>
+          
+    </div>
+</div> 
+  

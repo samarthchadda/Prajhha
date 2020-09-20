@@ -1,0 +1,42 @@
+
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="form-row pt-5 pb-4">
+        <div class="form-group col-md-4">
+        </div>
+      <h3 class="pl-lg-4 ml-lg-4">Edit Coach Details : </h3>
+    </div>
+    <div class="form-row pt-2">
+        <div class="form-group col-md-2">
+         </div>
+      <div class="form-group col-md-4">
+        <label for="facultyNm">Coach Name</label>
+        <input type="text" class="form-control" id="facultyNm" placeholder="Coach Name" name="name" required [(ngModel)]="facultyData.Name">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="facCategory">Category</label>
+        <input type="text" class="form-control" id="facCategory"  placeholder="Category" name="category" required [(ngModel)]="facultyData.Category" >
+      </div>
+    </div>
+
+    <div class="form-row pt-2">
+        <div class="form-group col-md-2">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="facPwd">Password</label>
+          <input type="text" class="form-control" id="facPwd" placeholder="Password" name="password" required [(ngModel)]="facultyData.Password">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="facFees">Fees</label>
+          <input type="number" class="form-control" id="facFees"  placeholder="Fee" name="fee" required [(ngModel)]="facultyData.Fees" pattern="^\d+([^.,])?$">
+        </div>
+      </div>
+
+      
+    <div class="form-row pt-4">
+        <div class="form-group col-md-5">
+        </div>
+        <div class="form-group col-md-4">
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary pl-lg-2 ml-lg-2">Save Changes</button>
+        </div>        
+      </div>    
+  </form>

@@ -1,0 +1,79 @@
+<div class="text-center">
+    <h3>Enter Details : </h3>
+  
+  </div>
+  <div class="shadow p-5 mb-5">
+  <div class="container  px-2 shadow p-3 mb-5 bg-white rounded " class="z-index:10; ">
+      <form  [formGroup]="facultyForm" (ngSubmit)="onSubmit()" class="ml-lg-5 pl-lg-5">
+        <div class="form-group row">
+        
+          <div class="col-sm-5">
+            <label for="">Coach Name</label>
+            <input type="text" class="form-control" id="CourseTitle" placeholder="Coach Name"  formControlName="name" required>
+          </div>
+          <div class="col-sm-5">
+            <label for="">Coach Phone</label>
+            <input type="number" class="form-control" id="CourseTitle" placeholder="Coach Phone"  formControlName="phone" required pattern="^\d+([^.,])?$">
+       </div>
+        </div>
+        <div class="form-group row">
+            
+          <div class="col-sm-5">
+            <label for="">Password</label>
+            <input type="text" class="form-control" id="Fees" placeholder="Password" formControlName="password"  required>
+          </div>
+          <div class="col-sm-5">
+            <label for="">Fees</label>
+            <input type="number" class="form-control" id="Fees" placeholder="Fees" formControlName="fee" pattern="^\d+([^.,])?$" required>
+          </div>
+        
+        </div>
+        <div class="form-group row">
+        
+          <div class="col-sm-5">
+            <label for="">Category</label>
+            <input type="text" class="form-control" id="CourseImg" placeholder="Category"  formControlName="category" required>
+          </div>
+          <div class="col-sm-5">
+            <label for="">Percentage Share</label>
+            <input type="number" class="form-control" id="CourseImg" placeholder="Percentage Share"  pattern="^\d+([^.,])?$" formControlName="perShare" required>
+          </div>
+        </div>
+        <h3>Set Time-Slot :- </h3>  
+  
+        <div formArrayName="timeSlot">
+  
+        <div class="form-group row" *ngFor="let itemrow of facultyForm.controls.timeSlot['controls']; let i=index"  [formGroupName]="i">
+       
+          <div class="col-sm-5">
+            <label for="">Start Time</label>
+            <input type="time"  id="startTime{{i}}" formControlName="startTime" class="form-control" placeholder="Start Time" required>
+          </div>
+          <div class="col-sm-5">
+            <label for="">End Time</label>
+            <input type="time"  id="endTime{{i}}" formControlName="endTime" class="form-control" placeholder="End Time " required>
+          </div>
+          <div class="col-sm-1">
+            <button *ngIf="facultyForm.controls.timeSlot['controls'].length > 1" (click)="deleteRow(i)" class="btn btn-danger"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+          </div>
+          </div>
+  
+        </div>
+        <button type="button" (click)="addNewRow()" class="btn btn-primary">Add New Slot <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+      
+  
+  
+      <div class="form-group row">
+        
+        <div class="col-sm-4 mt-4">
+          <button class="btn" [disabled]="!facultyForm.valid" style="background-color: #F06528; color: white;" type="submit">Submit</button>
+        </div>
+      </div>
+      
+     
+  
+    </form>
+    
+    </div>
+    
+    </div>

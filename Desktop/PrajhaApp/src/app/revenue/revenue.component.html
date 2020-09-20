@@ -1,0 +1,143 @@
+<div class="wrapper ">
+    <div class="table2 " >
+                                           
+        <div class="row2">
+      
+          <div class="cell2 "  >
+            <button (click)="showCourse()" class="btn btn-success"><i class="fa fa-inr" aria-hidden="true" ></i> Courses Revenue</button>
+             
+          </div>
+          <div class="cell2" >
+              <button (click)="showAppoint()" class="btn btn-success"><i class="fa fa-inr" aria-hidden="true" ></i> Appointments Revenue</button>
+          </div>       
+                         
+        </div>                     
+      </div> 
+
+ <div *ngIf="showCourseRev">   
+    <div class="text-center">
+        <h3>Courses Revenue</h3>
+    </div>
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        
+        <div class="cell">
+         S.No
+        </div>
+        <div class="cell">
+         Parent Name
+        </div>
+        <div class="cell">
+            Parent Phone
+           </div>
+        <div class="cell">
+           Course Name
+        </div>
+        <div class="cell">
+           Amount
+        </div>
+        <div class="cell">
+           Payment Date
+        </div>
+       
+      </div>
+      
+      <div class="row" *ngFor="let revenue of courseRevenues; let i=index">
+      
+        <div class="cell" data-title="S.No."  >
+            {{i+1}}
+           
+        </div>
+        <div class="cell" data-title="Parent Name"  >
+            {{revenue.ParentName}}
+           
+        </div>
+        <div class="cell" data-title="Parent Phone">
+            {{revenue.ParentPhone}}
+        </div>
+        <div class="cell" data-title="Course Name">
+            {{revenue.CourseName}}
+        </div>
+        <div class="cell" data-title="Amount">
+            {{revenue.Amount | currency:'INR'}}
+        </div>  
+       
+        <div class="cell" data-title="Payment Date">
+            {{revenue.PaymentDate | date}}
+        </div>
+      
+      </div>
+          
+    </div>
+    </div>
+
+
+    <div *ngIf="!showCourseRev">   
+        <div class="text-center">
+            <h3>Appointments Revenue</h3>
+        </div>
+        <div class="table shadow p-3 mb-5">
+          
+          <div class="row header" >
+            
+            <div class="cell">
+             S.No
+            </div>
+            <div class="cell">
+             Parent Name
+            </div>
+            <div class="cell">
+                Parent Phone
+               </div>
+            <div class="cell">
+               Coach Name
+            </div>
+            <div class="cell">
+                Coach Phone
+             </div>
+            <div class="cell">
+               Amount
+            </div>
+            <div class="cell">
+               Payment Date
+            </div>
+           
+          </div>
+          
+          <div class="row" *ngFor="let revenue of appointRevenues; let i=index">
+          
+            <div class="cell" data-title="S.No."  >
+                {{i+1}}
+               
+            </div>
+            <div class="cell" data-title="Parent Name"  >
+                {{revenue.ParentName}}
+               
+            </div>
+            <div class="cell" data-title="Parent Phone">
+                {{revenue.ParentPhone}}
+            </div>
+            <div class="cell" data-title="Coach Name">
+                {{revenue.FacultyName}}
+            </div>
+            <div class="cell" data-title="Coach Phone">
+                {{revenue.FacultyPhone}}
+            </div>
+            <div class="cell" data-title="Amount">
+                {{revenue.Amount | currency:'INR'}}
+            </div>  
+           
+            <div class="cell" data-title="Payment Date">
+                {{revenue.PaymentDate | date}}
+            </div>
+          
+          </div>
+              
+        </div>
+        </div>
+
+
+
+</div> 
+  

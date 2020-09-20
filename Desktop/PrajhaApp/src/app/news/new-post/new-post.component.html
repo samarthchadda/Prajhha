@@ -1,0 +1,16 @@
+<div class="form-box">
+    <h1>Post News</h1>
+      <form enctype="multipart/form-data" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="form-group mt-5 ">
+        <label for="name">* News Image (In PNG/JPEG format)</label>
+        <input class="form-control" id="name" type="file" (change)="selectImage($event)" name="newsImage" ngModel required>
+      </div>
+      
+      <div class="form-group mt-5 ">
+        <label for="message">* Description</label>
+        <textarea class="form-control"  name="content"  rows="40" ngModel required></textarea>
+      </div>
+      <input class="btn btn-primary mt-5 " [disabled]="!form.valid" type="submit" value="Submit" />
+     
+    </form>
+  </div>

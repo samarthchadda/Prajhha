@@ -1,0 +1,91 @@
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('/assets/images/bg-01.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Admin Login
+				</span>
+				<form *ngIf="!forgotPwd" class="login100-form validate-form p-b-33 p-t-5" (ngSubmit)="onSubmit(authForm)" #authForm="ngForm">
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="username" placeholder="Admin Id" required name="id" ngModel #username>
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password" required name="password" ngModel>
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn" type="submit" [disabled]="!authForm.valid">
+							Login
+						</button>
+                    </div>
+                    <div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn" (click)="onSwitchMode()" type="button">
+							Switch To {{isAdminMode ? 'Sub-Admin Login':'Admin Login'}}
+						</button>
+					</div>
+
+					<div class="container-login100-form-btn m-t-32">
+						<button class="btn btn-primary" (click)="forgotPassword()" type="button">
+							Forgot Password
+						</button>
+					</div>
+
+				</form>
+
+				<div *ngIf="forgotPwd">
+				<form style="margin-bottom:50px"  class="login100-form validate-form p-b-33 p-t-5" (ngSubmit)="sendEmail(authForm1)" #authForm1="ngForm">
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="email" placeholder="Enter Email" required  ngModel #tokenName>
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+		
+
+					<div class="container-login100-form-btn m-t-32">
+						<button  class="login100-form-btn" type="submit" [disabled]="!authForm1.valid">
+							Send Token
+						</button>
+					
+					</div>				             
+
+				</form>
+
+
+				<form  class="login100-form validate-form p-b-33 p-t-5"(ngSubmit)="resetPwd(authForm2)" #authForm2="ngForm">
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="email" placeholder="Enter Email" required  ngModel #tokenName>
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="token" placeholder="Enter Token"  ngModel #tokenName>
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="newPassword" placeholder="Enter New Password" #newPassword  ngModel>
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-32">
+						<button  class="login100-form-btn" type="submit" [disabled]="!authForm2.valid">
+							Reset Password
+						</button>
+					
+					</div>
+					
+				
+					             
+
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>

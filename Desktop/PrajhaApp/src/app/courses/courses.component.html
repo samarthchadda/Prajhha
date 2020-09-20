@@ -1,0 +1,61 @@
+
+<div class="wrapper ">
+    
+  <div class="table2 " >
+                                           
+    <div class="row2">
+  
+      <div class="cell2 "  >
+          <h2>Courses</h2>
+  
+      </div>
+      <div class="cell2" >
+          <button (click)="newCourse()" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> New Course</button>
+      </div>       
+                     
+    </div>                     
+  </div> 
+
+
+    <div class="table shadow p-3 mb-5">
+      
+      <div class="row header" >
+        <div class="cell">
+          S.No.
+        </div>
+        <div class="cell">
+          Course Name
+        </div>
+        <div class="cell">
+          Course Code
+        </div>
+           
+        <div class="cell" >
+        
+        </div>
+      </div>
+      
+      <div class="row" *ngFor="let course of courseInfo;;let i=index;">
+        <div class="cell" data-title="S.No."  >
+         {{i+1}}
+         
+       </div>
+        <div class="cell" data-title="Course Name"  >
+            {{ course.CourseName}}
+           
+        </div>
+        <div class="cell" data-title="Course Code">
+            {{ course.CourseID}}
+        </div>
+   
+       
+        <div class="cell">
+          <a [routerLink]="['/course/edit/'+ course.CourseID]"><u>MANAGE</u></a>
+        </div>
+      
+      </div>
+          
+    </div>
+</div> 
+  
+
